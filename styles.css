@@ -15,6 +15,11 @@ body {
   width: 150px;
   height: 220px;
   perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card-inner {
@@ -42,6 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: background-color 0.4s, box-shadow 0.4s;
 }
 
 .card-front {
@@ -59,6 +65,7 @@ body {
 
 .left {
   align-self: flex-start;
+  font-size: 18px;
 }
 
 .middle {
@@ -67,14 +74,39 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: 24px;
+  font-size: 40px;
   flex-grow: 1;
 }
 
 .right {
   align-self: flex-end;
+  font-size: 18px;
 }
 
 .red {
   color: red;
+}
+
+.black {
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card {
+    width: 100px;
+    height: 150px;
+  }
+
+  .left, .right {
+    font-size: 14px;
+  }
+
+  .middle {
+    font-size: 28px;
+  }
+
+  .card-back {
+    font-size: 14px;
+  }
 }
